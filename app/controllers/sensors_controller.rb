@@ -1,5 +1,6 @@
 class SensorsController < ApplicationController
   def index
+    bradcast_socket
     render json: Sensor.all, status: 200
   end
 
@@ -12,6 +13,7 @@ class SensorsController < ApplicationController
     rescue => e
       render json: { message: e.message }.to_json, status: 500
     end
+    bradcast_socket
     render json: { message: 'ok' }.to_json, status: 201
   end
 
@@ -22,6 +24,19 @@ class SensorsController < ApplicationController
     rescue => e
       render json: { message: e.message }.to_json, status: 500
     end
+    bradcast_socket
     render json: { message: 'ok' }.to_json, status: 201
   end
+end
+
+private
+
+def bradcast_socket
+  json_data = []
+  Sensor.all.each do |sensor|
+    datum = sensor.datums.order(created_at: :desc).first
+    json_data << { type: sensor.type, id: sensor.id.to_s, measure: datum.measure } if datum
+  end
+  ActionCable.server.broadcast \
+  "broadcast_sensors", json_data.to_json
 end

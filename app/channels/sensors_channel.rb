@@ -1,7 +1,7 @@
 # app/channels/sensor_channel.rb
 class SensorsChannel < ApplicationCable::Channel
   def subscribed
-    # current_user.appear
+    stream_from "broadcast_sensors"
   end
 
   def unsubscribed
