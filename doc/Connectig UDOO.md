@@ -9,4 +9,21 @@
 
   Open Serial Tools, and change the following parameters: Serial Port: “SLEB_USBtoUART” Baud rate “115200”
 
+  ---> http://www.udoo.org/docs-neo/Basic_Setup/Usb_Direct_Connection.html
+  ---> And reload
 
+  ---
+
+  ssh udooer:udooer@192.168.7.2
+
+  https://github.com/marksull/udooneorest/blob/master/README.rdoc
+
+
+  --------
+
+  sudo apt-get remove chronium-browser
+
+
+  ---------
+
+  npm install udoo
