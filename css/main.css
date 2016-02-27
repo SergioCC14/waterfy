@@ -1,0 +1,12 @@
+body {
+	margin: 15px;
+}
+
+canvas {
+	display: inline-block;
+	width: 100% !important;
+	height: auto !important;
+	margin-bottom: 1.2em;
+}
+
+.data-panel {}
