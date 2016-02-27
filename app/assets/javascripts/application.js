@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require app
+//= require ./services/base
+//= require_tree ./services
+//= require boot
