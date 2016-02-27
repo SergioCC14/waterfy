@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require action_cable
 //= require app
 //= require ./services/base
 //= require underscore
