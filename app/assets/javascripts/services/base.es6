@@ -1,4 +1,4 @@
-app.services.Base = class BaseService {
+App.services.Base = class BaseService {
 
 
 }

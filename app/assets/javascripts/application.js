@@ -15,7 +15,10 @@
 //= require turbolinks
 //= require app
 //= require ./services/base
+//= require underscore
+//= require backbone
+//= require backbone_rails_sync
+//= require backbone_datalink
 //= require_tree ./services
 //= require boot
-//= require backbone-rails
-//= require marionette-rails
+//= require backbone.marionette

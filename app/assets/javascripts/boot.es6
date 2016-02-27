@@ -1,8 +1,10 @@
-app.boot = () => {
-  for (serviceEntry of app.services){
-    let serviceName = serviceEntry[0]
-    let serviceClass = serviceEntry[1]
+App.boot = () => {
 
-    app.service[serviceName] = new serviceClass()
-  }  
+  Object.keys( App.services ).forEach( (serviceName) => {
+    let serviceClass = App.services[serviceName]    
+    App.service[serviceName] = new serviceClass()
+
+  })
+
+
 }

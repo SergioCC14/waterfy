@@ -60,4 +60,8 @@ Rails.application.configure do
   config.generators do |g|
     g.orm :mongoid
   end
+
+  # Add Rack::LiveReload to the bottom of the middleware stack with the default options.
+  config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
+
 end
