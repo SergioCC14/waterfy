@@ -1,5 +1,9 @@
 require File.expand_path('../boot', __FILE__)
 
+Bundler.require(*Rails.groups)
+
+Dotenv::Railtie.load
+
 require "rails"
 # Pick the frameworks you want:
 require "active_model/railtie"
