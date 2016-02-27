@@ -3,5 +3,5 @@ class Sensor
   include Mongoid::Timestamps
 
   field :type, type: String
-  field :measure, type: Float
+  has_many :datums
 end
