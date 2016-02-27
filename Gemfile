@@ -30,6 +30,7 @@ gem 'sprockets-es6'
 
 gem "rails-backbone"
 gem 'marionette-rails'
+gem 'handlebars_assets'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

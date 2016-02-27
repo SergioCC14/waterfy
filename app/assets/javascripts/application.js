@@ -19,10 +19,15 @@
 //= require backbone_rails_sync
 //= require backbone_datalink
 //= require backbone.marionette
+//= require handlebars.runtime
+//= require handlebars
 //= require app
 //= require ./services/base
 //= require_tree ./services
 //= require_tree ./models
 //= require_tree ./collections
 //= require_tree ./channels
+//= require_tree ./templates
+//= require_tree ./views
+//= require ./application_layout
 //= require boot

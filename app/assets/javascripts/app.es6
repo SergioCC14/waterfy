@@ -1,15 +1,14 @@
-let App = {
+let App = new Backbone.Marionette.Application({
   services: {},
   service: {},
   models: {},
   collections: {},
-  views: {}
-}
+  views: {},
+  cable: ActionCable.createConsumer(),
 
-App.cable = ActionCable.createConsumer()
+  regions: {
+    applicationRegion: '#application-region',
+    overlayRegion:     '#overlay-region'
+  }
 
-App.commands = new Backbone.Wreqr.Commands()
-App.vent = new Backbone.Wreqr.EventAggregator()
-App.reqres = new Backbone.Wreqr.RequestResponse()
-
-window.App = App
+})
