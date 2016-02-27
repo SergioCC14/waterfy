@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/estolfo/mongoid.git
+  revision: 50f62bab23766c864bc1a12af60d002f6b66550e
+  branch: MONGOID-4218-rails-5
+  specs:
+    mongoid (6.0.0)
+      activemodel (= 5.0.0.beta3)
+      mongo (~> 2.1)
+      tzinfo (>= 0.3.37)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -51,7 +61,6 @@ GEM
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.0)
     debug_inspector (0.0.2)
-    durran-validatable (2.0.1)
     erubis (2.7.0)
     execjs (2.6.0)
     ffi (1.9.10)
@@ -66,7 +75,6 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
-    leshill-will_paginate (2.3.11)
     listen (3.0.6)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9.7)
@@ -80,11 +88,6 @@ GEM
     minitest (5.8.4)
     mongo (2.2.3)
       bson (~> 4.0)
-    mongoid (1.0.6)
-      activesupport (>= 2.2.2)
-      durran-validatable (>= 2.0.1)
-      leshill-will_paginate (>= 2.3.11)
-      mongo (>= 0.18.2)
     multi_json (1.11.2)
     nio4r (1.2.1)
     nokogiri (1.6.7.2)
@@ -170,7 +173,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   listen (~> 3.0.5)
-  mongoid
+  mongoid!
   puma
   rails (>= 5.0.0.beta3, < 5.1)
   sass-rails (~> 5.0)
