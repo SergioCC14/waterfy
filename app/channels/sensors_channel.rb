@@ -1,5 +1,5 @@
 # app/channels/sensor_channel.rb
-class SensorChannel < ApplicationCable::Channel
+class SensorsChannel < ApplicationCable::Channel
   def subscribed
     # current_user.appear
   end
