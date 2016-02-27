@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/estolfo/mongoid.git
+  revision: 50f62bab23766c864bc1a12af60d002f6b66550e
+  branch: MONGOID-4218-rails-5
+  specs:
+    mongoid (6.0.0)
+      activemodel (= 5.0.0.beta3)
+      mongo (~> 2.1)
+      tzinfo (>= 0.3.37)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -43,6 +53,7 @@ GEM
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
+    bson (4.0.2)
     builder (3.2.2)
     byebug (8.2.2)
     coderay (1.1.1)
@@ -105,6 +116,8 @@ GEM
     mime-types (2.99.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
+    mongo (2.2.3)
+      bson (~> 4.0)
     multi_json (1.11.2)
     nenv (0.3.0)
     nio4r (1.2.1)
@@ -214,6 +227,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   marionette-rails
+  mongoid!
   puma
   rack-livereload
   rails (>= 5.0.0.beta3, < 5.1)
