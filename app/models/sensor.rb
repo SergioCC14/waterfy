@@ -3,5 +3,6 @@ class Sensor
   include Mongoid::Timestamps
 
   field :type, type: String
+  field :udoo_id, type: String
   has_many :datums
 end
