@@ -24,4 +24,5 @@
 //= require_tree ./services
 //= require_tree ./models
 //= require_tree ./collections
+//= require_tree ./channels
 //= require boot
