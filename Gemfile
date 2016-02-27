@@ -28,6 +28,9 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'sprockets-es6'
 
+gem "rails-backbone"
+gem 'marionette-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

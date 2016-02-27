@@ -17,3 +17,5 @@
 //= require ./services/base
 //= require_tree ./services
 //= require boot
+//= require backbone-rails
+//= require marionette-rails
