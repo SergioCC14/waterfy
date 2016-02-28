@@ -10,7 +10,7 @@ App.services.RealTime = class RealtimeService extends App.services.Base {
     App.commands.setHandler('sensor:measure:received', (data) => {
       console.log('socket data received');
       console.log(data)
-      data = JSON.parse(data)
+      if (typeof data == 'string') { data = JSON.parse(data) }      
       data.forEach( (sensorData) => {
         let sensor = App.sensors.get(sensorData.id)
         console.log('data for sensor: ' + sensorData.id);
