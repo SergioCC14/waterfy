@@ -5,25 +5,18 @@ App.views.ThreeDee = Backbone.Marionette.LayoutView.extend({
     this.scene = objectLoader.parse(App.threeData.scene)
     this.ship = this.scene.getObjectByName('Boat')
 
-    let vis1 = new App.views.ThreeVisualization({
-      model: new App.models.Camera({position: {'y': 2.5, 'z': 10} }),
-      ship: this.ship,
-      scene: this.scene
-    })
+    let camerasAttributes = [
+      {position: {'y': 2.5, 'z': 10} },
+      {position: {'x': 15, 'y': 1.5, 'z': 0.5}, rotation: {'y': 89.5}},
+      {position: {'y': 15}, rotation: {'x': -1.6}}
+    ]
 
-    let vis2 = new App.views.ThreeVisualization({
-      model: new App.models.Camera({position: {'x': 15, 'y': 1.5, 'z': 0.5}, rotation: {'y': 89.5}}  ),
-      ship: this.ship,
-      scene: this.scene
-    })
-
-    let vis3 = new App.views.ThreeVisualization({
-      model: new App.models.Camera({position: {'y': 15}, rotation: {'x': -1.6}}),
-      ship: this.ship,
-      scene: this.scene
-    })
-
-    this.visualizations = [vis1, vis2, vis3]
+    this.visualizations = []
+    let visualizations = this.visualizations
+    camerasAttributes.forEach( (cameraAttributes) => {
+      let vis = new App.views.ThreeVisualization({ model: new App.models.Camera(cameraAttributes), ship: this.ship, scene: this.scene })
+      visualizations.push(vis)
+    } )
 
   },
 
@@ -42,11 +35,48 @@ App.views.ThreeDee = Backbone.Marionette.LayoutView.extend({
     let self = this
     document.onkeydown = function(e) {
       e = e || window.event;
-			if (e.keyCode == '37') { self.moveZ( 0.05) }
-			if (e.keyCode == '39') { self.moveZ(-0.05) }
+      let sensorLeft = 0.0,
+          sensorRight = 0.0
+
+			if (e.keyCode == '37') {
+        App.commands.execute('sensor:measure:received',
+          [ {
+             id: '56d2eba26e90839f12524bdd',
+             type: 'horizontal',
+             direction: 'left',
+             udoo_id: 4,
+             measure: (sensorLeft + 0.05).toString
+           },
+           {
+             id: "56d2ebe96e90839f4ebacca2",
+             type: 'horizontal',
+             direction: 'right',
+             udoo_id: 4,
+             measure: (sensorRight - 0.05).toString
+           }
+         ]
+        )
+      }
+			if (e.keyCode == '39') {
+        App.commands.execute('sensor:measure:received',
+          [ {
+             id: '56d2eba26e90839f12524bdd',
+             type: 'horizontal',
+             direction: 'left',
+             udoo_id: 4,
+             measure: (sensorLeft - 0.05).toString
+           },
+           {
+             id: "56d2ebe96e90839f4ebacca2",
+             type: 'horizontal',
+             direction: 'right',
+             udoo_id: 4,
+             measure: (sensorRight + 0.05).toString
+           }
+         ]
+        )
+      }
 		}
-
-
 
   },
 

@@ -16,4 +16,5 @@ window.boot = () => {
   App.layout = new App.views.ApplicationLayout()
   App.applicationRegion.show(App.layout)
 
+  App.threeDeeView = App.layout.threeDeeView
 }

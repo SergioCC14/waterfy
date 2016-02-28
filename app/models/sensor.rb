@@ -4,7 +4,8 @@ class Sensor
   
   field :type, type: String
   field :udoo_id, type: String
-  field :id, type: String
+  
+  field :direction, type: String
   has_many :datums
 
 end
