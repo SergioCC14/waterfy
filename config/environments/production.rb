@@ -85,4 +85,5 @@ Rails.application.configure do
   # config.middleware.use SensorActionCable
   config.web_socket_server_url = "ws://ec2-52-17-73-59.eu-west-1.compute.amazonaws.com:3000/cable"
   config.action_controller.allow_forgery_protection = false
+  ActionCable.server.config.disable_request_forgery_protection = true
 end
