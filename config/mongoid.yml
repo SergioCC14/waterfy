@@ -141,7 +141,7 @@ test:
           mode: :primary
         max_pool_size: 1
 production: 
-  sessions:
+  clients:
     default:
       # The standard MongoDB connection URI allows for easy replica set 
       # connection setup. 
