@@ -36,61 +36,17 @@ App.views.ThreeDee = Backbone.Marionette.LayoutView.extend({
     let sensorLeftMeassure = 0.0, sensorRightMeassure = 0.0, deg = 0.0
     document.onkeydown = function(e) {
       e = e || window.event;
-
 			if (e.keyCode == '37') {
         sensorLeftMeassure += 0.05
         sensorRightMeassure -= 0.05
         deg += 0.05
-        App.commands.execute('sensor:measure:received',
-          [ {
-             id: App.sensors.findWhere({type: 'horizontal', direction: 'left'}).get('id'),
-             type: 'horizontal',
-             direction: 'left',
-             udoo_id: 4,
-             meassure: (sensorLeftMeassure).toString()
-           },
-           {
-             id: App.sensors.findWhere({type: 'horizontal', direction: 'right'}).get('id'),
-             type: 'horizontal',
-             direction: 'right',
-             udoo_id: 4,
-             meassure: (sensorRightMeassure).toString()
-           },
-           {
-             id: App.sensors.findWhere({type: 'accelerometer-x'}).get('id'),
-             type: 'accelerometer-x',
-             meassure: deg.toString()
-           }
-         ]
-        )
       }
 			if (e.keyCode == '39') {
         sensorLeftMeassure -= 0.05
         sensorRightMeassure += 0.05
         deg -= 0.05
-        App.commands.execute('sensor:measure:received',
-          [ {
-             id: App.sensors.findWhere({type: 'horizontal', direction: 'left'}).get('id'),
-             type: 'horizontal',
-             direction: 'left',
-             udoo_id: 4,
-             meassure: (sensorLeftMeassure).toString()
-           },
-           {
-             id: App.sensors.findWhere({type: 'horizontal', direction: 'right'}).get('id'),
-             type: 'horizontal',
-             direction: 'right',
-             udoo_id: 4,
-             meassure: (sensorRightMeassure).toString()
-           },
-           {
-             id: App.sensors.findWhere({type: 'accelerometer-x'}).get('id'),
-             type: 'accelerometer-x',
-             meassure: deg.toString()
-           }
-         ]
-        )
       }
+      App.sensorsChannel.fakeMove(sensorLeftMeassure, sensorRightMeassure, deg)
 		}
 
   },
@@ -102,9 +58,9 @@ App.views.ThreeDee = Backbone.Marionette.LayoutView.extend({
   },
 
   rotateX: function(degrees){
-    console.log('ship rotation ' + this.ship.rotation.x);
-    console.log('rotating ' + degrees);
     if (!isNaN(degrees)){
+      console.log('ship rotation ' + this.ship.rotation.x);
+      console.log('rotating ' + degrees);
       this.ship.rotation.x += degrees
       this.updateVisualizations()
     }

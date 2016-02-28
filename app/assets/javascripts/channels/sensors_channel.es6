@@ -1,6 +1,6 @@
 App.subscribeToSensors = () => {
 
-  App.cable.subscriptions.create("SensorsChannel", {
+  App.sensorsChannel =  App.cable.subscriptions.create("SensorsChannel", {
 
     connected: () => {
       console.log('connected to sockeeeeeet');
@@ -16,7 +16,12 @@ App.subscribeToSensors = () => {
 
     received: (data) => {
       App.commands.execute('sensor:measure:received', data)
+    },
+
+    fakeMove: function(left, right, xDegrees) {
+      this.perform("fake_move", {left: left, right: right, xDegrees: xDegrees} )      
     }
+
 
   })
 }
