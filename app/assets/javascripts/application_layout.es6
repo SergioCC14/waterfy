@@ -7,7 +7,8 @@ App.views.ApplicationLayout = Backbone.Marionette.LayoutView.extend({
   },
 
   onShow: function() {
-    this.threedeeRegion.show(  new App.views.ThreeDee() )
+    this.threeDeeView = new App.views.ThreeDee()
+    this.threedeeRegion.show( this.threeDeeView )
   }
 
 })
