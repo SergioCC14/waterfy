@@ -7,16 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 sensors = [
-  { type: 'accelerometer', udoo_id: '1' },
+  { type: 'accelerometer-x',     udoo_id: '1' },
+  { type: 'accelerometer-y',     udoo_id: '2' },
+  { type: 'accelerometer-z',     udoo_id: '3' },
   
-  { type: 'gyroscope-x',     udoo_id: '2' },
-  { type: 'gyroscope-y',     udoo_id: '3' },
-  { type: 'gyroscope-z',     udoo_id: '4' },
+  { type: 'gyroscope-x',     udoo_id: '4' },
+  { type: 'gyroscope-y',     udoo_id: '5' },
+  { type: 'gyroscope-z',     udoo_id: '6' },
 
-  { type: 'magnetometer',  udoo_id: '5' },
+  { type: 'magnetometer',  udoo_id: '7' },
 
-  { type: 'horizontal',    udoo_id: '6', direction: 'left' },
-  { type: 'horizontal',    udoo_id: '7', direction: 'right' },
+  { type: 'horizontal',    udoo_id: '8', direction: 'left' },
+  { type: 'horizontal',    udoo_id: '9', direction: 'right' },
 ]
 sensors.each do |sensor|
   s = Sensor.find_or_create_by(udoo_id: sensor[:udoo_id])
