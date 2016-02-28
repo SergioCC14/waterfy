@@ -24,8 +24,6 @@
 //= require vendor/three.min
 //= require app
 //= require data/three_data
-//= require three/ship
-//= require three/three_app
 //= require ./services/base
 //= require_tree ./services
 //= require_tree ./models
