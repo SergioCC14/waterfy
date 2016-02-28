@@ -50,7 +50,7 @@ private
 def bradcast_socket
   json_data = []
   Sensor.all.each do |sensor|
-    datum = sensor.datums.order(created_at: :desc).first
+    datum = sensor.datums.where(:measure.nin => ["", nil]).order(created_at: :desc).first
     json_data << { "id" => sensor.id.to_s, id: sensor.id.to_s, type: sensor.type, udoo_id: sensor.udoo_id, measure: datum.measure } if datum
   end
   ActionCable.server.broadcast \
