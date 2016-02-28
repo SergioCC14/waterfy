@@ -92,18 +92,24 @@ App.views.ThreeDee = Backbone.Marionette.LayoutView.extend({
   rotateX: function(degrees){
     console.log('ship rotation ' + this.ship.rotation.x);
     console.log('rotating ' + degrees);
-    this.ship.rotation.x += degrees
-    this.updateVisualizations()
+    if (!degrees.isNaN()){
+      this.ship.rotation.x += degrees
+      this.updateVisualizations()
+    }
   },
 
   rotateY: function(degrees){
-    this.ship.rotation.y += degrees
-    this.updateVisualizations()
+    if (!degrees.isNaN()){
+      this.ship.rotation.y += degrees
+      this.updateVisualizations()
+    }
   },
 
   rotateZ: function(degrees){
-    this.ship.rotation.z += degrees
-    this.updateVisualizations()
+    if (!degrees.isNaN()){
+      this.ship.rotation.z += degrees
+      this.updateVisualizations()
+    }
   },
 
   moveX: function(pixels){
