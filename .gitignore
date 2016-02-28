@@ -23,3 +23,5 @@
 .ruby-gemset
 
 .ruby-version
+.env
+.env

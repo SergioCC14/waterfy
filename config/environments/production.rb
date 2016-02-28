@@ -82,6 +82,6 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
   
-  config.middleware.use SensorActionCable  
+  # config.middleware.use SensorActionCable
   config.web_socket_server_url = "wss://waterfy.herokuapp.com/"
 end

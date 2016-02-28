@@ -64,4 +64,6 @@ Rails.application.configure do
   # Add Rack::LiveReload to the bottom of the middleware stack with the default options.
   config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
 
+  # config.middleware.use SensorActionCable
+  config.web_socket_server_url = "wss://waterfy.herokuapp.com/"
 end
