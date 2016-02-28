@@ -33,31 +33,31 @@ App.views.ThreeDee = Backbone.Marionette.LayoutView.extend({
     this.frontRegion.show( this.visualizations[1] )
     this.upRegion.show( this.visualizations[2] )
     let self = this
-    let sensorLeft = 0.0, sensorRight = 0.0, deg = 0.0
+    let sensorLeftMeassure = 0.0, sensorRightMeassure = 0.0, deg = 0.0
     document.onkeydown = function(e) {
       e = e || window.event;
 
 			if (e.keyCode == '37') {
-        sensorLeft += 0.05
-        sensorRight -= 0.05
+        sensorLeftMeassure += 0.05
+        sensorRightMeassure -= 0.05
         deg += 0.05
         App.commands.execute('sensor:measure:received',
           [ {
-             id: '56d300b46e9083a5358e4d50',
+             id: App.sensors.findWhere({type: 'horizontal', direction: 'left'}).get('id'),
              type: 'horizontal',
              direction: 'left',
              udoo_id: 4,
-             meassure: (sensorLeft).toString()
+             meassure: (sensorLeftMeassure).toString()
            },
            {
-             id: "56d300b46e9083a5358e4d51",
+             id: App.sensors.findWhere({type: 'horizontal', direction: 'right'}).get('id'),
              type: 'horizontal',
              direction: 'right',
              udoo_id: 4,
-             meassure: (sensorRight).toString()
+             meassure: (sensorRightMeassure).toString()
            },
            {
-             id: "56d300b46e9083a5358e4d49",
+             id: App.sensors.findWhere({type: 'accelerometer-x'}).get('id'),
              type: 'accelerometer-x',
              meassure: deg.toString()
            }
@@ -65,26 +65,26 @@ App.views.ThreeDee = Backbone.Marionette.LayoutView.extend({
         )
       }
 			if (e.keyCode == '39') {
-        sensorLeft -= 0.05
-        sensorRight += 0.05
+        sensorLeftMeassure -= 0.05
+        sensorRightMeassure += 0.05
         deg -= 0.05
         App.commands.execute('sensor:measure:received',
           [ {
-             id: "56d300b46e9083a5358e4d50",
+             id: App.sensors.findWhere({type: 'horizontal', direction: 'left'}).get('id'),
              type: 'horizontal',
              direction: 'left',
              udoo_id: 4,
-             meassure: (sensorLeft).toString()
+             meassure: (sensorLeftMeassure).toString()
            },
            {
-             id: "56d300b46e9083a5358e4d51",
+             id: App.sensors.findWhere({type: 'horizontal', direction: 'right'}).get('id'),
              type: 'horizontal',
              direction: 'right',
              udoo_id: 4,
-             meassure: (sensorRight).toString()
+             meassure: (sensorRightMeassure).toString()
            },
            {
-             id: "56d300b46e9083a5358e4d49",
+             id: App.sensors.findWhere({type: 'accelerometer-x'}).get('id'),
              type: 'accelerometer-x',
              meassure: deg.toString()
            }
