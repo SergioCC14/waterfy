@@ -11,7 +11,7 @@ sensors = [
   { type: 'gyroscope',     udoo_id: '2' },
   { type: 'magnetometer',  udoo_id: '3' },
   { type: 'horizontal',    udoo_id: '4' },
-  { type: 'horizontal',    udoo_id: '5' }
+  { type: 'horizontal',    udoo_id: '5' },
   { type: 'horizontal',    udoo_id: '6' }
 ]
 sensors.each do |sensor|
