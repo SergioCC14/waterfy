@@ -37,9 +37,10 @@ El objetivo de guardar los datos, además de asegurar que los estos llegan al cl
 
 
 
+# Placa Udoo
+==============
 
-
-#
+https://github.com/SergioCC14/udoo-talker
 
 
 
