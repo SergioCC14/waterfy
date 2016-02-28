@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # Serve websocket cable requests in-process
   mount ActionCable.server => '/cable'
   # mount ActionCable.server => '/cable'
-  resources :sensors, only: :index do
+  resources :sensors, only: [:index, :show] do
     put :data
     put :update_bulk
   end
