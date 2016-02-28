@@ -8,12 +8,18 @@
 
 sensors = [
   { type: 'accelerometer', udoo_id: '1' },
-  { type: 'gyroscope',     udoo_id: '2' },
-  { type: 'magnetometer',  udoo_id: '3' },
-  { type: 'horizontal',    udoo_id: '4' },
-  { type: 'horizontal',    udoo_id: '5' },
-  { type: 'horizontal',    udoo_id: '6' }
+  
+  { type: 'gyroscope-x',     udoo_id: '2' },
+  { type: 'gyroscope-y',     udoo_id: '3' },
+  { type: 'gyroscope-z',     udoo_id: '4' },
+
+  { type: 'magnetometer',  udoo_id: '5' },
+
+  { type: 'horizontal',    udoo_id: '6', direction: 'left' },
+  { type: 'horizontal',    udoo_id: '7', direction: 'right' },
 ]
 sensors.each do |sensor|
-  Sensor.find_or_create_by(type: sensor[:type], udoo_id: sensor[:udoo_id])
+  s = Sensor.find_or_create_by(type: sensor[:type], udoo_id: sensor[:udoo_id])
+  s.direction = sensor[:direction] if sensor[:direction]
+  s.save
 end

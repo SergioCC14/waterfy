@@ -33,7 +33,7 @@ set :repo_url, 'git@github.com:SergioCC14/waterfy.git'
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
-
+Dotenv.load
 set :rails_env, 'production'               # If the environment differs from the stage name
 set :migration_role, 'db'                  # Defaults to 'db'
 set :conditionally_migrate, true           # Defaults to false. If true, it's skip migration if files in db/migrate not modified
