@@ -14,6 +14,12 @@ class SensorsController < ApplicationController
     render json: sensors.to_json, status: 200
   end
 
+  def show
+    unless @sensor = Sensor.find_by(udoo_id: params[:id])
+      redirect_to root_path
+    end
+  end
+
   def update_bulk
     begin
       params[:data].each do |data_sensor|

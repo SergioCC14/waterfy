@@ -1,0 +1,15 @@
+<h1> Sensor <%= @sensor.udoo_id %> - <%= @sensor.type %></h1>
+ <table>
+  <tr>
+    <td>ID</td>
+    <td>Created At</td>
+    <td>Measure</td>
+  </tr>
+  <% @sensor.datums.order(created_at: :desc).limit(20).each do |datum| %>
+    <tr>
+      <td><%= datum.id.to_s %></td>
+      <td><%= datum.created_at %></td>
+      <td><%= datum.measure %></td>
+    </tr>
+  <% end %>
+</table> 
