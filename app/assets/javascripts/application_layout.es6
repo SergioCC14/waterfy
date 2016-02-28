@@ -3,11 +3,11 @@ App.views.ApplicationLayout = Backbone.Marionette.LayoutView.extend({
   template: HandlebarsTemplates['application_layout'],
 
   regions: {
-    shipRegion: '.ship-region'
+    threedeeRegion: '.threedee-region'
   },
 
-  onShow: () => {
-
+  onShow: function() {
+    this.threedeeRegion.show(  new App.views.ThreeDee() )
   }
 
 })
