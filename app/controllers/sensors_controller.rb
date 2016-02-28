@@ -1,6 +1,6 @@
 class SensorsController < ApplicationController
   def index
-    bradcast_socket
+    #bradcast_socket
     render json: Sensor.all, status: 200
   end
 
