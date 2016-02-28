@@ -83,6 +83,6 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
   
   # config.middleware.use SensorActionCable
-  # config.web_socket_server_url = "wss://waterfy.herokuapp.com/"
+  config.web_socket_server_url = "ws://ec2-52-17-73-59.eu-west-1.compute.amazonaws.com:3000/cable"
   config.action_controller.allow_forgery_protection = false
 end
