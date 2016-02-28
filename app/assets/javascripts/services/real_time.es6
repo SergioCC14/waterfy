@@ -8,9 +8,13 @@ App.services.RealTime = class RealtimeService extends App.services.Base {
     })
 
     App.commands.setHandler('sensor:measure:received', (data) => {
+      console.log('socket data received');
+      console.log(data);
       data.forEach( (sensorData) => {
         let sensor = App.sensors.get(sensorData.id)
+        console.log('data for sensor: ' + sensorData.id);
         delete sensorData['id']
+        console.log(sensorData);
         sensor.addMeassure(sensorData)
       })
       let zOffset = App.sensors.horizontalOffset()
