@@ -6,9 +6,6 @@ development: &development
   :inline: true
 test: *development  
 production: &production  
-  :url: <%= ENV['REDISTOGO_URL'] %>
-  :host: <%= URI.parse(ENV['REDISTOGO_URL']).host %>
-  :port: <%= URI.parse(ENV['REDISTOGO_URL']).port %>
-  :password: <%= URI.parse(ENV['REDISTOGO_URL']).password %>
+  :uri: <%= ENV['REDISTOGO_URL'] %>
   :inline: true
   :timeout: 1
