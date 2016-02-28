@@ -14,9 +14,10 @@ App.services.RealTime = class RealtimeService extends App.services.Base {
         sensor.addMeassure(sensorData)
       })
       let zOffset = App.sensors.horizontalOffset()
-      console.log(zOffset);
       App.threeDeeView.moveZ( zOffset )
-
+      App.threeDeeView.rotateX( App.sensors.xDegreeOffset()  )
+      App.threeDeeView.rotateY( App.sensors.yDegreeOffset()  )
+      App.threeDeeView.rotateZ( App.sensors.zDegreeOffset()  )
     })
 
   }

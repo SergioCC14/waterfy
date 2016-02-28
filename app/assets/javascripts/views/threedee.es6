@@ -42,14 +42,14 @@ App.views.ThreeDee = Backbone.Marionette.LayoutView.extend({
         sensorRight -= 0.05
         App.commands.execute('sensor:measure:received',
           [ {
-             id: '56d2f2e16e9083a2667e9453',
+             id: '56d300b46e9083a5358e4d50',
              type: 'horizontal',
              direction: 'left',
              udoo_id: 4,
              meassure: (sensorLeft).toString()
            },
            {
-             id: "56d2f2e16e9083a2667e9454",
+             id: "56d300b46e9083a5358e4d51",
              type: 'horizontal',
              direction: 'right',
              udoo_id: 4,
@@ -63,14 +63,14 @@ App.views.ThreeDee = Backbone.Marionette.LayoutView.extend({
         sensorRight += 0.05
         App.commands.execute('sensor:measure:received',
           [ {
-             id: '56d2f2e16e9083a2667e9453',
+             id: "56d300b46e9083a5358e4d50",
              type: 'horizontal',
              direction: 'left',
              udoo_id: 4,
              meassure: (sensorLeft).toString()
            },
            {
-             id: "56d2f2e16e9083a2667e9454",
+             id: "56d300b46e9083a5358e4d51",
              type: 'horizontal',
              direction: 'right',
              udoo_id: 4,
@@ -90,6 +90,8 @@ App.views.ThreeDee = Backbone.Marionette.LayoutView.extend({
   },
 
   rotateX: function(degrees){
+    console.log('ship rotation ' + this.ship.rotation.x);
+    console.log('rotating ' + degrees);
     this.ship.rotation.x += degrees
     this.updateVisualizations()
   },

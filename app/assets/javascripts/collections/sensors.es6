@@ -19,8 +19,14 @@ App.collections.Sensors = Backbone.Collection.extend({
     return total
   },
 
-  degreesOffset: function(){
-
+  xDegreeOffset: function(){
+    return this.findWhere({type: 'accelerometer-x'}).lastMeassureDiff()
+  },
+  yDegreeOffset: function(){
+    return this.findWhere({type: 'accelerometer-y'}).lastMeassureDiff()
+  },
+  zDegreeOffset: function(){
+    return this.findWhere({type: 'accelerometer-z'}).lastMeassureDiff()
   }
 
 })
