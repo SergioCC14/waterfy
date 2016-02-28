@@ -14,7 +14,7 @@ App.subscribeToSensors = () => {
       console.log('rejecteeeeed');
     },
 
-    received: (data) => {
+    received: (e, data) => {
       App.commands.execute('sensor:measure:received', data)
     }
 
