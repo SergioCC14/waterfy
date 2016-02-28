@@ -33,13 +33,14 @@ App.views.ThreeDee = Backbone.Marionette.LayoutView.extend({
     this.frontRegion.show( this.visualizations[1] )
     this.upRegion.show( this.visualizations[2] )
     let self = this
-    let sensorLeft = 0.0, sensorRight = 0.0
+    let sensorLeft = 0.0, sensorRight = 0.0, deg = 0.0
     document.onkeydown = function(e) {
       e = e || window.event;
 
 			if (e.keyCode == '37') {
         sensorLeft += 0.05
         sensorRight -= 0.05
+        deg += 0.05
         App.commands.execute('sensor:measure:received',
           [ {
              id: '56d300b46e9083a5358e4d50',
@@ -54,6 +55,11 @@ App.views.ThreeDee = Backbone.Marionette.LayoutView.extend({
              direction: 'right',
              udoo_id: 4,
              meassure: (sensorRight).toString()
+           },
+           {
+             id: "56d300b46e9083a5358e4d49",
+             type: 'accelerometer-x',
+             meassure: deg.toString()
            }
          ]
         )
@@ -61,6 +67,7 @@ App.views.ThreeDee = Backbone.Marionette.LayoutView.extend({
 			if (e.keyCode == '39') {
         sensorLeft -= 0.05
         sensorRight += 0.05
+        deg -= 0.05
         App.commands.execute('sensor:measure:received',
           [ {
              id: "56d300b46e9083a5358e4d50",
@@ -75,6 +82,11 @@ App.views.ThreeDee = Backbone.Marionette.LayoutView.extend({
              direction: 'right',
              udoo_id: 4,
              meassure: (sensorRight).toString()
+           },
+           {
+             id: "56d300b46e9083a5358e4d49",
+             type: 'accelerometer-x',
+             meassure: deg.toString()
            }
          ]
         )
