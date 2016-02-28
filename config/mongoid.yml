@@ -150,4 +150,4 @@ production:
           # Provides the hosts the default client can connect to. Must be an array
           # of host:port pairs. (required)
           hosts:
-            - <%= "#{URI.parse(ENV['MONGOLAB_URI']).host}:#{URI.parse(ENV['MONGOLAB_URI']).port}" %>
+            - <%= URI.parse(ENV['MONGOLAB_URI']).host%>:<%=URI.parse(ENV['MONGOLAB_URI']).port %>
