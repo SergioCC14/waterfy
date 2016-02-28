@@ -25,3 +25,11 @@
 .ruby-version
 .env
 .env
+
+.env
+
+.env
+EC2Confisio.pem
+.env*
+zcredentials
+config/ec2.yml

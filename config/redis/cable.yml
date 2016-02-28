@@ -6,9 +6,8 @@ development: &development
   :inline: true
 test: *development  
 production: &production  
-  :url: <%= ENV['REDISTOGO_URL'] %>
-  :host: <%= URI.parse(ENV['REDISTOGO_URL']).host %>
-  :port: <%= URI.parse(ENV['REDISTOGO_URL']).port %>
-  :password: <%= URI.parse(ENV['REDISTOGO_URL']).password %>
-  :inline: true
+  :url: redis://localhost:6379
+  :host: localhost
+  :port: 6379
   :timeout: 1
+  :inline: true

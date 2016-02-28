@@ -12,13 +12,12 @@ require "action_cable/engine"
 require "sprockets/railtie"
 require "rails/test_unit/railtie"
 
-Bundler.require(*Rails.groups)
-
-Dotenv::Railtie.load unless Rails.env.production?
-
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
+
 Bundler.require(*Rails.groups)
+
+Dotenv::Railtie.load
 
 module Waterfy
   class Application < Rails::Application

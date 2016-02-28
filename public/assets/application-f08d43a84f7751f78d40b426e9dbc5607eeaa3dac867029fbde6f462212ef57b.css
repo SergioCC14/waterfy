@@ -7,6 +7,7 @@
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
+
 html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
@@ -7573,6 +7574,7 @@ button.close {
 	background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .0001)), to(rgba(0, 0, 0, .5)));
 	background-image: linear-gradient(to right, rgba(0, 0, 0, .0001) 0, rgba(0, 0, 0, .5) 100%);
 	filter: unquote("progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1)");
+
 	background-repeat: repeat-x
 }
 
@@ -8042,3 +8044,33 @@ button.close {
 
 
 /*# sourceMappingURL=bootstrap.min.css.map */
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+
+ */
+
+
+ body {
+ 	margin: 15px;
+ }
+
+ canvas {
+ 	display: inline-block;
+ 	width: 100% !important;
+ 	height: auto !important;
+ 	margin-bottom: 1.2em;
+ }
+
+ .data-panel {}
