@@ -1,4 +1,5 @@
 # Proyecto para el hackathon Sanjurjo Badía
+@SergioCC14 - @cicloon - @iagolast - @danielRomero
 
 ## API REST
 
