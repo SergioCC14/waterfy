@@ -53,7 +53,7 @@ group :development do
 
   gem 'capistrano'
   gem 'capistrano-rails'
-  gem 'capistrano-passenger'
+  gem 'capistrano3-puma'
   gem 'capistrano-rvm'
   gem 'capistrano-bundler'
   gem 'cap-ec2'

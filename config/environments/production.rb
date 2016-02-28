@@ -84,4 +84,5 @@ Rails.application.configure do
   
   # config.middleware.use SensorActionCable
   # config.web_socket_server_url = "wss://waterfy.herokuapp.com/"
+  config.action_controller.allow_forgery_protection = false
 end
