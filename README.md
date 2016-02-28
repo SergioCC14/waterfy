@@ -24,9 +24,11 @@ Resumen del stack
 --------------
   - Framework: Ruby on Rails 5.0.0 beta 3
   - Websockets: ActionCable
-  - Persistencia: MongoDB 
+  - Persistencia: MongoDB
   - Encolado de sockets en tiempo real: Redis
   - Servidor web: Puma
+  - Frontal: Backbone.js + Marionette.js + Three.js
+  - Estilos: Bootstrap
   Montado sobre un Ubuntu 14.04 en una instancia EC2.t2.micro de Amazon Web Services
 
 # Frontal Web
