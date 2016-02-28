@@ -6,6 +6,7 @@ class SensorsController < ApplicationController
         id: s.id.to_s,
         type: s.type,
         udoo_id: s.udoo_id,
+        direction: s.direction,
         created_at: s.created_at,
         updated_at: s.updated_at
       }
