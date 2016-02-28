@@ -277,6 +277,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   marionette-rails
   mongoid!
+  pry
   puma
   rack-livereload
   rails (>= 5.0.0.beta3, < 5.1)

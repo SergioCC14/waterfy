@@ -19,7 +19,8 @@ sensors = [
   { type: 'horizontal',    udoo_id: '7', direction: 'right' },
 ]
 sensors.each do |sensor|
-  s = Sensor.find_or_create_by(type: sensor[:type], udoo_id: sensor[:udoo_id])
+  s = Sensor.find_or_create_by(udoo_id: sensor[:udoo_id])
+  s.type = sensor[:type]
   s.direction = sensor[:direction] if sensor[:direction]
   s.save
 end
