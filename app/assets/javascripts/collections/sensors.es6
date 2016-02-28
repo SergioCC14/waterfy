@@ -12,9 +12,11 @@ App.collections.Sensors = Backbone.Collection.extend({
 
   horizontalOffset: function(){
     let sensors = this.horizontalSensors()
-    let leftSensor  = sensors.findWhere({direction: 'left'})
-    let rightSensor = sensors.findWhere({direction: 'right'})
-    return (leftSensor.lastMeassureDiff() + rightSensor.lastMeassureDiff()) / 2.0
+    let leftSensor  = sensors.findWhere({direction: 'left'}).lastMeassureDiff()
+    let rightSensor = sensors.findWhere({direction: 'right'}).lastMeassureDiff()
+    let total = Math.abs(leftSensor) + Math.abs(rightSensor) / 2.0
+    if (rightSensor < 0) { total = total * -1.0 }
+    return total
   },
 
   degreesOffset: function(){

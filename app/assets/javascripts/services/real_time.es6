@@ -10,12 +10,12 @@ App.services.RealTime = class RealtimeService extends App.services.Base {
     App.commands.setHandler('sensor:measure:received', (data) => {
       data.forEach( (sensorData) => {
         let sensor = App.sensors.get(sensorData.id)
-        debugger
         delete sensorData['id']
         sensor.addMeassure(sensorData)
       })
-
-      App.threeDeeView.moveZ( App.sensors.horizontalOffset() )
+      let zOffset = App.sensors.horizontalOffset()
+      console.log(zOffset);
+      App.threeDeeView.moveZ( zOffset )
 
     })
 

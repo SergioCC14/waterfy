@@ -33,45 +33,48 @@ App.views.ThreeDee = Backbone.Marionette.LayoutView.extend({
     this.frontRegion.show( this.visualizations[1] )
     this.upRegion.show( this.visualizations[2] )
     let self = this
+    let sensorLeft = 0.0, sensorRight = 0.0
     document.onkeydown = function(e) {
       e = e || window.event;
-      let sensorLeft = 0.0,
-          sensorRight = 0.0
 
 			if (e.keyCode == '37') {
+        sensorLeft += 0.05
+        sensorRight -= 0.05
         App.commands.execute('sensor:measure:received',
           [ {
-             id: '56d2eba26e90839f12524bdd',
+             id: '56d2f2e16e9083a2667e9453',
              type: 'horizontal',
              direction: 'left',
              udoo_id: 4,
-             measure: (sensorLeft + 0.05).toString
+             meassure: (sensorLeft).toString()
            },
            {
-             id: "56d2ebe96e90839f4ebacca2",
+             id: "56d2f2e16e9083a2667e9454",
              type: 'horizontal',
              direction: 'right',
              udoo_id: 4,
-             measure: (sensorRight - 0.05).toString
+             meassure: (sensorRight).toString()
            }
          ]
         )
       }
 			if (e.keyCode == '39') {
+        sensorLeft -= 0.05
+        sensorRight += 0.05
         App.commands.execute('sensor:measure:received',
           [ {
-             id: '56d2eba26e90839f12524bdd',
+             id: '56d2f2e16e9083a2667e9453',
              type: 'horizontal',
              direction: 'left',
              udoo_id: 4,
-             measure: (sensorLeft - 0.05).toString
+             meassure: (sensorLeft).toString()
            },
            {
-             id: "56d2ebe96e90839f4ebacca2",
+             id: "56d2f2e16e9083a2667e9454",
              type: 'horizontal',
              direction: 'right',
              udoo_id: 4,
-             measure: (sensorRight + 0.05).toString
+             meassure: (sensorRight).toString()
            }
          ]
         )

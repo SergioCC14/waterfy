@@ -6,7 +6,7 @@ App.models.Sensor = Backbone.Model.extend({
 
   lastMeassureDiff: function(){
     let size = this.measures.length
-    let offset = 0
+    let offset = 0.0
     if (size > 2){
       offset = this.measures.models[size-2].value() - this.measures.models[size-1].value()
     }
